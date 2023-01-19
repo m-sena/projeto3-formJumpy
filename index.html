@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Slot 5 Projeto 3 - Jumpy</title>
+    <style>
+        body {
+            background-color: #404040;
+            color: white;
+        }
+
+        .logo {
+            margin-top: 32px;
+            margin-left: 45px;
+            height: 85px;
+
+        }
+
+        #header {
+            font-family: Helvetica;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        section {
+
+            font-family: raleway;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        #form {
+            margin-top: 10px;
+        }
+
+        #form div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 22px;
+        }
+
+        #form input {
+            padding: 16px;
+            width: 500px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        #cadastrar {
+            width: 530px;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 6px;
+            font-size: 18px;
+            font-family: Raleway;
+            font-weight: 800;
+            background: #0C70F2;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="assets/images/DNC.png" alt="Logo">
+    </header>
+    <div id="header">
+        <img class="jumpy" src="assets/images/Jumpy.png" alt="Jumpy">
+        <h2>Bem vindo ao Jumpy!</h2>
+    </div>
+    <section>
+        <Container id="bemvindo">
+            <form id="form">
+                <div>
+                    <label for="fname">Nome Completo:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Nome completo" required />
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email@email.com" required />
+                </div>
+
+                <div>
+                    <label for="telef">Telefone:</label>
+                    <input type="tel" id="telef" name="telef" placeholder="(00) 0000-0000" required />
+                </div>
+
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000 000 000-00" required />
+                </div>
+
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type=password" id="senha" name="senha" placeholder="****************" />
+                </div>
+
+            </form>
+            <p><input type="submit" id="cadastrar" value="Cadastrar" />
+                <span id="respostacadastro"></span>
+        </Container>
+
+
+    </section>
+    <script>
+        validarDados(cadastro) {
+            if (cadastro.fname == '') {
+                let respostaNome = document.getElementById('respostaname')
+                respostaNome.innerText = '*Campo obrigatório'
+                this.mostrarRetornoNegativo();
+                return false
+            } else {
+                let respostaNome = document.getElementById('respostanome')
+                respostaNome.innertext = ''
+            }
+            if (cadastro.emailPessoa == '') {
+                let email = document.getElementById('email')
+                email.innertext = '*Campo obrigatório'
+                this.mostrarRetornoNegativo();
+                return false
+            } else {
+                let email = document.getElementById('email')
+                email.innerText = ''
+            }
+
+            return true
+        }
+
+        salvar(cadastro) {
+            this.arrayCadastro.push(cadastro)
+            this.id++
+        }
+
+        mostrarRetornoNegativo() {
+            let respostaCadastro = document.getElementById('respostacadastro')
+            respostaCadastro.innerText = 'Campos obrigatórios não preenchidos!'
+            respostaCadastro.style.color = 'red'
+            respostaCadastro.styletextAlign = 'right'
+        }
+        mostrarRetornoPositivo() {
+            let respostaCadastro = document.getElementById('respostacadastro')
+            respostaCadastro.innerText = 'Cadastro realizado com sucesso!'
+            respostaCadastro.style.color = '#2acd62c'
+            respostaCadastro.style.Align = 'left'
+        }
+    </script>
+</body>
+
+</html>
